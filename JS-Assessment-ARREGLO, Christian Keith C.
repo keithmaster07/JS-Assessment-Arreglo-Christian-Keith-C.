@@ -1,0 +1,37 @@
+// create a variable to hold NFT
+let planetNFTs = [];
+
+// function to mint an nft
+function mintNFT(planetName, planetType, owner) { 
+    // create an NFT object with the provided meta data 
+    let nft = {
+        name: planetName,
+        type: planetType,
+        owner: owner
+    };
+    // store the NFT object
+    planetNFTs.push(nft);
+}
+
+// function to list all nfts
+function listNFTs() {
+    //loop through the planetNFTs array
+    planetNFTs.forEach(nft => {
+        console.log(`Name: ${nft.name}, TYpe: ${nft.type},  Owner: ${nft.owner}`);
+    });
+}
+
+// Funtion to get the total number
+function getTotalSupply() {
+    return planetNFTs.length;
+}
+
+// call functions
+mintNFT("Earth","Terra","Keith");
+mintNFT("Venus","Terra","Sarah");
+mintNFT("Jupiter","Gas","Michael");
+
+console.log("Listing NFTs:");
+listNFTs();
+
+console.log("Total NFTs minted:", getTotalSupply());
